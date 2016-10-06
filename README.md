@@ -1,6 +1,6 @@
 # PyCrypto
 
-Prerequisities (Assuming Mac is used):
+## Prerequisites (Assuming Mac is used):
 
 **MySQL server (default port)**
 
@@ -8,3 +8,10 @@ Prerequisities (Assuming Mac is used):
 
 **DB schema as per pycrypto.sql**
 
+Python environment with libraries listed in *pip_libraries.txt*
+
+To install all packages with pip run:
+
+```
+pip install -r path/to/pip_libraries.txt
+```
