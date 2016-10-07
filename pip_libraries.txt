@@ -1,0 +1,9 @@
+coloredlogs==5.0
+decorator==4.0.10
+futures==3.0.5
+humanfriendly==2.0.1
+jsonpath-rw==1.4.0
+mysql-connector==2.1.4
+ply==3.9
+requests==2.11.1
+six==1.10.0
