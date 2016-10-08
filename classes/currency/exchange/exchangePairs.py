@@ -9,6 +9,12 @@ class ExchangePairs(CurrencyPairs):
         self.currency_pair = str(currency_pair)  # type: str
 
     def get_all(self):
+        """
+        Get all exchange pairs for a currency pair
+
+        Returns:
+            List of dictionaries
+        """
         query = ""
         query += "SELECT *"
         query += " FROM `EXCHANGEPAIR` `EP`"

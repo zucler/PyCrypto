@@ -36,6 +36,15 @@ class DbHelper:
         self.connection.commit()
 
     def get_results_as_dictionary_list(self, query):
+        """
+        Get results as a list of dictionaries
+
+        Args:
+            query (str): MySQL query
+
+        Returns:
+            list
+        """
         cursor = self.connection.cursor()
         cursor.execute(query)
 
@@ -51,6 +60,15 @@ class DbHelper:
         return results_list
 
     def get_first_row_as_dictionary(self, query):
+        """
+        Get the first row in results set
+
+        Args:
+            query (str): MySQL query
+
+        Returns:
+            dict
+        """
         cursor = self.connection.cursor()
         cursor.execute(query)
 

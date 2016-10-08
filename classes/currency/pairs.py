@@ -16,7 +16,7 @@ class CurrencyPairs:
         Get all known currency pairs
 
         Returns:
-            Dict of currency pairs
+            List of dictionaries
         """
         query = "SELECT * FROM `PAIR`"
 
@@ -25,6 +25,15 @@ class CurrencyPairs:
         return pairs
 
     def get_by_id(self, pair_id):
+        """
+        Get a currency pair by id
+
+        Args:
+            pair_id (int|str):
+
+        Returns:
+            dict
+        """
         query = "SELECT * FROM `PAIR` WHERE `ID` = " + str(pair_id)
 
         pair = self.db.get_first_row_as_dictionary(query)
