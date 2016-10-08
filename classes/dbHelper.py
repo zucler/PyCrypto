@@ -3,6 +3,7 @@ import mysql.connector
 
 class DbHelper:
     """ Manage database connection """
+
     def __init__(self, username, password, db_host, db_port, schema, buffered=True):
         """
         Initialise DbHelper
@@ -34,6 +35,27 @@ class DbHelper:
     def commit(self):
         """Commit current transaction"""
         self.connection.commit()
+
+    def insert(self, query, datas):
+        """
+        Executes the insert operations mulitple times
+
+        Args:
+            query (str): SQL query
+            datas (list|tuple): data to be inserted
+
+        Returns:
+
+        """
+        cursor = self.connection.cursor()
+
+        if len(datas) > 1:
+            cursor.executemany(query, datas)
+        else:
+            cursor.execute(query, datas)
+
+        self.commit()
+        cursor.close()
 
     def get_results_as_dictionary_list(self, query):
         """
